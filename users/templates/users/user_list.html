@@ -1,0 +1,40 @@
+{% extends "user/base.html" %}
+
+
+{% block content %}
+    <h2>Alla användare</h2>
+
+    {% if message %}
+        <div class="message">{{message}}</div>
+    {% endif %}
+
+
+    {% if users %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Namn</th>
+                    <th>?</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.name}}</td>
+                    
+                    <td>
+                        <a href="{% url 'users:update' user.id%}">Redigera</a>
+                        <a href="{% url 'users.delete' user.id%}">Radera</a>
+                    </td>
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>Inga användare ännu...</p>
+        {% endif %}
+       
+    {% endblock %}

@@ -13,3 +13,5 @@ def add_user(name: str) -> tuple[bool, str]:
         return True, f"Användare '{cleaned}' har skapats!"
     except IntegrityError:
         return False, f"Användare '{cleaned}' finns redan"
+    
+    
