@@ -1,0 +1,20 @@
+{% extends "users/base.html" %}
+
+{%block content %}
+
+<h2>Ta bort användare</h2>
+
+<p>
+    Är du säker på att du vill ta bort?
+    <strong>{{user.name}}</strong>
+</p>
+
+<form method="POST">
+    {%csrf_token %}
+    <button type="submit">Ja</button>
+    <a href="{% url 'users:list' %}">Avbryt</a>
+
+</form>
+
+
+{% endblock %}

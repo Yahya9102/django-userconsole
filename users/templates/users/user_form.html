@@ -1,0 +1,18 @@
+{% extends "users/base.html" %}
+
+{% block content %}
+    <h2>{{title}}</h2>
+
+    
+    {% if error %}
+        <div class="error">{{error}}</div>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Användarman</label>
+        <input type="text" name="name" id="name" value="{{ name_value|default_if_none:''}}" />
+        <br>
+        <button type="submit">Spara</button>
+    </form>
+    {% endblock %}

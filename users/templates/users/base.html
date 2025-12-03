@@ -10,11 +10,11 @@
         <h1>Django userlist</h1>
         <nav>
             <a href="{% url 'users:list' %}">Alla användare</a>
-            <a href="{% url 'user:create' %}">Skapa ny användare</a>
+            <a href="{% url 'users:create' %}">Skapa ny användare</a>
         </nav>
     </header>
 
-    {% block content}
+    {% block content %}
     {% endblock %}
 
 </body>
